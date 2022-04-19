@@ -1,0 +1,191 @@
+<div class="container-fluid" style="background:#2f1b85">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 align-items-center h-50 align-self-center">
+        <h1 class="curious">
+          Stay curious.
+        </h1>
+        <h5 class="curious-text">
+          Discover stories, thinking, and expertise from writers on any topic.
+        </h5>
+        <button style="background: blueviolet;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: none;
+    font-size:20px;
+    color: #fff;
+    font-weight: 600;">Sart reading</button>
+      </div>
+      <div class="col-md-6 py-5">
+        <img src="../../../assets/paper.svg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+
+  <div class="container  home-wrapper container-md">
+    <div class="row">
+      <h1 class="my-4">Latest News</h1>
+      <div class="col-md-4 mt-5" routerLinkActive="router-link-active" *ngFor="let post of posts; index as i">
+        <div class="row" *ngIf="i < 6" routerLink="/posts/{{post.id}}">
+          <div class="col-md-2 pt-3">
+            <span>0{{i+1}}</span>
+          </div>
+          <div class="col-md-10">
+
+            <div class="row  align-items-center">
+              <!-- <div class="col-md-1">
+                <img class="mr-2" style="width:40px;height: 40px;" src="../../../assets/profile.svg" alt="">
+
+              </div> -->
+              <div class="col-md-10">
+                <h5 class="pl-2" style="margin-left: 10px;">{{post.user.first_name}}</h5>
+              </div>
+              <h3 class="font-weight-bold">
+                {{post.title}}
+              </h3>
+              <span>{{post.createdAt | json}}
+                ·
+                13 min read</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr class="my-5">
+        </div>
+      </div>
+      <div class="row mb-5">
+        <div class="col-md-7">
+
+          <div class="row">
+            <ng-container *ngFor="let post of posts; index as i">
+              <div class="col-md-6" *ngIf="i < 4" routerLink="/posts/{{post.id}}">
+                <img src="{{post.image_url}}" style="height:200px;object-fit: cover;" alt="">
+                <h5>{{post.title}}</h5>
+              </div>
+              <div class="col-md-12" *ngIf="i == 5" routerLink="/posts/{{post.id}}">
+                <img src="{{post.image_url}}" style="height:200px;object-fit: cover;" alt="">
+                <h5>{{post.title}}</h5>
+              </div>
+              <div class="col-md-12" *ngIf="i>=10" routerLink="/posts/{{post.id}}">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img src="{{post.image_url}}" style="height:200px;object-fit: cover;" alt="">
+
+                  </div>
+                  <div class="col-md-8">
+                    <h5>{{post.title}}</h5>
+                    <h4 class="text-muted">{{post.user.first_name}}</h4>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="row align-items-center" *ngFor="let post of posts">
+            <div class="col-md-8" routerLink="/posts/{{post.id}}">
+              <div class="row align-items-center">
+                <div class="col-md-2">
+                  <img src="../../../assets/profile.svg" alt="">
+
+                </div>
+                <div class="col-md-10">
+                  <h5 class="pl-2" style="margin-left: 10px;">{{post.user.first_name}}</h5>
+                </div>
+                <h5 class="font-weight-bold">
+                  {{post.title}}
+
+                </h5>
+                <span> {{post.createdAt}}
+                  ·
+                  13 min read</span>
+              </div>
+              <div class="w-100">
+                <hr>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <img src="{{post.image}}" alt="">
+            </div>
+          </div>
+
+
+
+        </div>
+        <!-- <div class="col-md-5 sticky-top">
+          <h1>Discover more what you want.</h1>
+          <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+            <mat-chip class="example-box p-3" cdkDrag *ngFor="let vegetable of vegetables">
+              {{vegetable.name}}
+            </mat-chip>
+          </mat-chip-list>
+          <div class="mt-5">
+            Help
+
+            Status
+
+            Writers
+
+            Blog
+
+            Careers
+
+            Privacy
+
+            Terms
+
+            About
+
+            Knowable
+          </div>
+        </div> -->
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  <!-- <div class="container-fluid contenedor text-center">
+    <h1 class="text-center">CARDS BY Francisco Kataldo</h1>
+    <div class=" container text-center">
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 container_foto ">
+        <div class="ver_mas text-center">
+          <span class="lnr lnr-eye"></span>
+        </div>
+        <article class="text-left">
+          <h2>TÍTULO DE <br>LA IMAGEN</h2>
+          <h4>Descripción corta de la imagen en cuestión</h4>
+        </article>
+        <img src="https://img-aws.ehowcdn.com/400x400/ds-img.studiod.com/Half_Dome_from_Glacier_Point0_1.jpg" alt="">
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 container_foto">
+        <div class="ver_mas text-center">
+          <span id="click" class="lnr lnr-eye"></span>
+        </div>
+        <article class="text-left">
+          <h2>TÍTULO DE <br>LA IMAGEN</h2>
+          <h4>Descripción corta de la imagen en cuestión</h4>
+        </article>
+        <img src="https://pbs.twimg.com/profile_images/781518570018648065/HcvZhTVn_400x400.jpg" alt="">
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 container_foto">
+        <div class="ver_mas text-center">
+          <span class="lnr lnr-eye"></span>
+        </div>
+        <article class="text-left">
+          <h2>TÍTULO DE <br>LA IMAGEN</h2>
+          <h4>Descripción corta de la imagen en cuestión</h4>
+        </article>
+        <img src="https://ericrenardphotography.com/wp-content/uploads/Yosemite_Valley_2861-1-400x400.jpg" alt="">
+      </div>
+    </div>
+  </div> -->

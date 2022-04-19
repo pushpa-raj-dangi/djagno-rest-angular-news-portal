@@ -1,0 +1,58 @@
+<div class="row" [formGroup]="postForm" (submit)="createPost()">
+  <div class="col-md-12">
+    <h3>Create Post</h3>
+  </div>
+
+  <div class="col-md-8">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Enter Title</mat-label>
+        <input matInput formControlName="title" placeholder="Placeholder">
+      </mat-form-field>
+    </p>
+
+    <div class="my-3">
+      <p>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Entter Description</mat-label>
+          <textarea matInput formControlName="description" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"
+            style="height:200px" placeholder="Description"></textarea>
+        </mat-form-field>
+      </p>
+    </div>
+    <div class="my-3">
+      <button mat-raised-button color="primary" (click)="createPost()">Create Post</button>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="p-3">
+      <div class="my-3">
+        <h4>Select Category</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>Categories</mat-label>
+          <mat-select formControlName="category_id">
+            <mat-option *ngFor="let category of categories" [value]="category.id">
+              {{category.title}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="my-2">
+        <h4>Select Tag</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>Tags</mat-label>
+          <mat-select formControlName="tag_id">
+            <mat-option *ngFor="let tag of tags" [value]="tag.id">
+              {{tag.title}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    {{postForm.value | json}}
+
+
+
+  </div>
+</div>

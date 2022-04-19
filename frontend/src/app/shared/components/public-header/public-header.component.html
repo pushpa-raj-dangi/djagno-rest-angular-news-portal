@@ -1,0 +1,68 @@
+<div class="container-fluid" style="background:#f7f7f7;background: #f7f7f7;
+    position: sticky;
+    top: 0;z-index: 1002">
+  <div class="container">
+    <div class="row">
+      <mat-toolbar elevation="2">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+
+        </button>
+
+
+        <span routerLink="/">Mero News</span>
+        <span class="example-spacer"></span>
+        <ng-container *ngIf="!userService.isLoggedIn(); else loggedIn">
+
+
+          <button [routerLink]="['/signup']" routerLinkActive="router-link-active" mat-button
+            class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+
+
+            Register
+
+          </button>
+
+          <button [routerLink]="['/login']" routerLinkActive="router-link-active" mat-button
+            class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+
+
+            Login
+
+          </button>
+        </ng-container>
+        <ng-template #loggedIn>
+          <div class="d-flex align-items-center" [matMenuTriggerFor]="menu">
+
+
+            <img width="30px" height="30px" class="img-responsive mr-3" style="margin-right:10px"
+              src="../../../../assets/profile.svg" alt="">
+            <h5 class="ml-2">{{user?.first_name}}</h5>
+
+            <button mat-icon-button aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button [routerLink]="['/dashboard']" routerLinkActive="router-link-active" mat-menu-item>
+                <mat-icon>dashboard</mat-icon>
+                <span>Dashboard</span>
+              </button>
+              <button mat-menu-item (click)="logout()">
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+              </button>
+              <button [routerLink]="['/profile']" routerLinkActive="router-link-active" mat-menu-item>
+                <mat-icon>manage_accounts</mat-icon>
+                <span>Account</span>
+              </button>
+            </mat-menu>
+          </div>
+        </ng-template>
+
+
+      </mat-toolbar>
+    </div>
+
+  </div>
+
+</div>

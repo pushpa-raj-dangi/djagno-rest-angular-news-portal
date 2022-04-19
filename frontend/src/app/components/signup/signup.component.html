@@ -1,0 +1,70 @@
+<div class="sign-login">
+  <div class="login-outer-countainer">
+    <mat-card class="login-inner-countainer">
+      <mat-card-header class="login-title">
+        <mat-card-title>Register</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="login-field-container">
+        <form [formGroup]="loginForm" autocomplete="off" novalidate (ngSubmit)="submitLoginForm(loginForm.value)"
+          fxLayout="column wrap">
+          <div class="my-2">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Placeholder" formControlName="email" id="email" required />
+
+              <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+              <mat-error *ngIf="hasError('email', 'email')">Email is not valid</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="my-2">
+            <mat-form-field appearance="outline">
+              <mat-label>User Name</mat-label>
+              <input matInput placeholder="Placeholder" formControlName="username" id="username" required />
+
+              <mat-error *ngIf="hasError('username', 'required')">username is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="my-2">
+            <mat-form-field appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput placeholder="Placeholder" formControlName="first_name" id="first_name" required />
+              <mat-error *ngIf="hasError('first_name', 'required')">First Name is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="my-2">
+            <mat-form-field appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input matInput placeholder="Placeholder" formControlName="last_name" id="last_name" required />
+
+              <mat-error *ngIf="hasError('last_name', 'required')">Last Name is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="my-4">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput [type]="hide ? 'text' : 'password'" formControlName="password" id="password" minlength="6"
+                required />
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="hasError('password', 'required')">password is required</mat-error>
+              <mat-error *ngIf="hasError('password', 'minlength')">password is not valid</mat-error>
+            </mat-form-field>
+          </div>
+
+          <button mat-raised-button color="primary" class="login-btn" [disabled]="!loginForm.valid">
+            Login
+          </button>
+        </form>
+        <a mat-flat-button class="register-btn" [routerLink]="['/login']" routerLinkActive="router-link-active">
+          Already have account? Login
+        </a>
+        <br />
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>

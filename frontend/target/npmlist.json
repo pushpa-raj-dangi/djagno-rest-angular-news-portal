@@ -1,0 +1,82 @@
+{
+  "version": "0.0.0",
+  "name": "dashboard",
+  "dependencies": {
+    "@angular/animations": {
+      "version": "13.3.2",
+      "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-13.3.2.tgz"
+    },
+    "@angular/cdk": {
+      "version": "13.3.2",
+      "resolved": "https://registry.npmjs.org/@angular/cdk/-/cdk-13.3.2.tgz"
+    },
+    "@angular/common": {
+      "version": "13.3.2",
+      "resolved": "https://registry.npmjs.org/@angular/common/-/common-13.3.2.tgz"
+    },
+    "@angular/compiler": {
+      "version": "13.3.2",
+      "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-13.3.2.tgz"
+    },
+    "@angular/core": {
+      "version": "13.3.2",
+      "resolved": "https://registry.npmjs.org/@angular/core/-/core-13.3.2.tgz"
+    },
+    "@angular/flex-layout": {
+      "version": "9.0.0-beta.31",
+      "resolved": "https://registry.npmjs.org/@angular/flex-layout/-/flex-layout-9.0.0-beta.31.tgz"
+    },
+    "@angular/forms": {
+      "version": "13.3.2",
+      "resolved": "https://registry.npmjs.org/@angular/forms/-/forms-13.3.2.tgz"
+    },
+    "@angular/localize": {
+      "version": "13.3.2",
+      "resolved": "https://registry.npmjs.org/@angular/localize/-/localize-13.3.2.tgz"
+    },
+    "@angular/material": {
+      "version": "8.2.3",
+      "resolved": "https://registry.npmjs.org/@angular/material/-/material-8.2.3.tgz"
+    },
+    "@angular/platform-browser-dynamic": {
+      "version": "13.3.2",
+      "resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-13.3.2.tgz"
+    },
+    "@angular/platform-browser": {
+      "version": "13.3.2",
+      "resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-13.3.2.tgz"
+    },
+    "@angular/router": {
+      "version": "13.3.2",
+      "resolved": "https://registry.npmjs.org/@angular/router/-/router-13.3.2.tgz"
+    },
+    "bootstrap": {
+      "version": "5.1.3",
+      "resolved": "https://registry.npmjs.org/bootstrap/-/bootstrap-5.1.3.tgz"
+    },
+    "hammerjs": {
+      "version": "2.0.8",
+      "resolved": "https://registry.npmjs.org/hammerjs/-/hammerjs-2.0.8.tgz"
+    },
+    "highcharts-angular": {
+      "version": "2.4.0",
+      "resolved": "https://registry.npmjs.org/highcharts-angular/-/highcharts-angular-2.4.0.tgz"
+    },
+    "highcharts": {
+      "version": "10.0.0",
+      "resolved": "https://registry.npmjs.org/highcharts/-/highcharts-10.0.0.tgz"
+    },
+    "rxjs": {
+      "version": "6.4.0",
+      "resolved": "https://registry.npmjs.org/rxjs/-/rxjs-6.4.0.tgz"
+    },
+    "tslib": {
+      "version": "1.10.0",
+      "resolved": "https://registry.npmjs.org/tslib/-/tslib-1.10.0.tgz"
+    },
+    "zone.js": {
+      "version": "0.9.1",
+      "resolved": "https://registry.npmjs.org/zone.js/-/zone.js-0.9.1.tgz"
+    }
+  }
+}

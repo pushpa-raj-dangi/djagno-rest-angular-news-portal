@@ -1,0 +1,33 @@
+<mat-nav-list>
+  <div class="profile-card text-left">
+    <img src="../../../../assets/profile.svg" alt="Soufiane FADIL">
+    <div class="header">
+      <h2>{{user?.first_name}}</h2>
+      <h4>{{user?.first_name}}@gmail.com</h4>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+    <mat-icon>dashboard</mat-icon>
+    Dashboard
+  </a>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/posts">
+    <mat-icon>article</mat-icon>
+    Posts
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/create-post">
+    <mat-icon>post_add</mat-icon>
+    Create Post
+  </a>
+
+
+
+
+</mat-nav-list>
+<div>
+  <button color="primary" routerLink="/" mat-button>Switch portal</button>
+</div>

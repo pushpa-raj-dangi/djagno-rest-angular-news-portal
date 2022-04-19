@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-8">
+      <mat-chip-list aria-label="Fish selection">
+        <mat-chip selected color="primary">
+          {{post?.category?.title}}
+        </mat-chip>
+      </mat-chip-list>
+      <h1 class="single-post-title mb-3">{{post?.title}}</h1>
+      <div class="row">
+        <div class="col-md-10">
+          <h2 class="writer"><span><b>{{post?.user?.first_name | titlecase}} {{post?.user?.last_name |
+                titlecase}}</b></span>/<span class="text-muted"> {{post?.created_at | date: 'medium'}}</span></h2>
+
+        </div>
+
+        <div class="col-md-2 d-flex align-items-center">
+          <span class="material-icons-outlined">
+            chat_bubble_outline
+          </span> {{ post?.comments.length }} Comment
+        </div>
+      </div>
+      <figure class="p-0 m-0">
+
+        <img *ngIf="post?.image_url !== null;else another" [src]="post?.image_url" alt="" srcset="">
+        <ng-template #another>
+          <img another src="../../../assets/default.png" alt="" srcset="">
+        </ng-template>
+      </figure>
+      <p style="font-size:18px;line-height: 1.7;font-family: 'poppins';">{{post?.description}}</p>
+      <h1>Comments</h1>
+
+      <mat-chip-list aria-label="Dog selection">
+        <mat-card class="mb-5 col-md-12" *ngFor="let comment of post?.comments">
+          <mat-chip>
+            <mat-chip-avatar class="">
+              <img src="../../../assets/profile.svg" alt="Photo of a Shiba Inu" />
+            </mat-chip-avatar>
+
+            <div class="mx-2 px-1">{{ comment?.user?.first_name }}</div>
+          </mat-chip>
+
+          {{ comment?.description }}
+        </mat-card>
+
+      </mat-chip-list>
+
+    </div>
+    <div class="col-md-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+
+            <h1><span class="text-primary" style="color:blue">Latest</span> News</h1>
+          </div>
+
+          <div class="col-md-12 mb-3" *ngFor="let item of posts" (click)="toTop()">
+            <div class="card card-1" routerLink="/posts/{{item.id}}" routerLinkActive="router-link-active">
+              <h3>{{item.title}}</h3>
+
+              <p>
+                {{item.description | slice:0:50}}</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
